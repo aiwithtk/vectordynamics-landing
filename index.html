@@ -575,6 +575,49 @@
         window.open('https://magic.beehiiv.com/v1/1168b244-5388-4e43-93b3-9a49f5d7138e?email=' + encodeURIComponent(email), '_blank');
       });
     }
+
+    // Cookie banner logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    const refuseBtn = document.getElementById('cookie-refuse-btn');
+
+    if (cookieBanner && acceptBtn && refuseBtn) {
+      if (!localStorage.getItem('cookie-consent-dismissed')) {
+        setTimeout(() => {
+          cookieBanner.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+          cookieBanner.classList.add('translate-y-0', 'opacity-100');
+        }, 1000);
+      }
+
+      const dismissBanner = () => {
+        localStorage.setItem('cookie-consent-dismissed', 'true');
+        cookieBanner.classList.remove('translate-y-0', 'opacity-100');
+        cookieBanner.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      };
+
+      acceptBtn.addEventListener('click', dismissBanner);
+      refuseBtn.addEventListener('click', dismissBanner);
+    }
   </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-4 right-4 z-[100] max-w-sm w-[90%] md:w-auto bg-[#FAF6F0] border border-[#002147]/20 p-5 shadow-2xl transition-all duration-500 translate-y-20 opacity-0 pointer-events-none">
+    <div class="space-y-4">
+      <div class="space-y-2 text-left">
+        <h4 class="text-sm font-bold font-serif text-[#002147]">Respect de votre vie privée</h4>
+        <p class="text-[11px] leading-relaxed font-sans text-[#002147]/80">
+          Ce site utilise des cookies pour analyser notre trafic et améliorer votre expérience d'apprentissage. Vous pouvez accepter ou refuser ces cookies à tout moment.
+        </p>
+      </div>
+      <div class="flex gap-2 justify-end">
+        <button id="cookie-refuse-btn" class="px-3 py-1.5 text-[10px] font-sans border border-[#002147]/30 hover:border-[#002147] text-[#002147] transition font-medium tracking-wider uppercase">
+          Refuser
+        </button>
+        <button id="cookie-accept-btn" class="px-3 py-1.5 text-[10px] font-sans bg-[#002147] hover:bg-[#003366] text-white transition font-medium tracking-wider uppercase">
+          Accepter
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

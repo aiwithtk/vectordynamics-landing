@@ -45,6 +45,18 @@
     .aurora-blur-bubble-2 {
       animation: aurora-float-2 22s infinite ease-in-out;
     }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-[#FAF6F0] text-[#002147] font-serif min-h-screen relative overflow-x-hidden">
@@ -127,13 +139,36 @@
   </section>
 
   <!-- Tools Logos Section -->
-  <section class="py-10 px-5 md:px-12 max-w-6xl mx-auto text-center relative z-10 border-t border-[#002147]/5">
-    <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-6">Les outils que vous allez maîtriser</p>
-    <div id="tools-logos-container" class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-      <img src="./images/langfuse.jpg" alt="Langfuse" class="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300 filter grayscale hover:grayscale-0">
-      <img src="./images/openclaw.jpg" alt="Openclaw" class="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300 filter grayscale hover:grayscale-0">
-      <img src="./images/hermes.jpg" alt="Hermes Agent" class="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300 filter grayscale hover:grayscale-0">
-      <img src="./images/antigravity.jpg" alt="Antigravity" class="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300 filter grayscale hover:grayscale-0">
+  <section class="py-10 px-5 md:px-12 w-full mx-auto text-center relative z-10 border-t border-[#002147]/5 overflow-hidden">
+    <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-8">Les outils que vous allez maîtriser</p>
+    <div class="w-full overflow-hidden relative" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+      <div class="animate-marquee gap-10 md:gap-16 opacity-80 flex items-center pr-10">
+        <!-- First Set -->
+        <img src="./images/11labs.webp" alt="11labs" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/GitHub.webp" alt="GitHub" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/antigravity.webp" alt="Antigravity" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/claude.webp" alt="Claude" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/comfyui-dark.webp" alt="ComfyUI" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/hermes-icon.webp" alt="Hermes" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/langfuse.webp" alt="Langfuse" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/mongoDB.webp" alt="MongoDB" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/n8n.webp" alt="n8n" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/openclaw.webp" alt="Openclaw" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/vapi.webp" alt="Vapi" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        
+        <!-- Second Set (Duplicate for seamless loop) -->
+        <img src="./images/11labs.webp" alt="11labs" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/GitHub.webp" alt="GitHub" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/antigravity.webp" alt="Antigravity" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/claude.webp" alt="Claude" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/comfyui-dark.webp" alt="ComfyUI" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/hermes-icon.webp" alt="Hermes" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/langfuse.webp" alt="Langfuse" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/mongoDB.webp" alt="MongoDB" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/n8n.webp" alt="n8n" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/openclaw.webp" alt="Openclaw" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+        <img src="./images/vapi.webp" alt="Vapi" class="h-12 md:h-16 w-auto object-contain hover:scale-125 transition-transform duration-300 filter grayscale hover:grayscale-0 cursor-pointer">
+      </div>
     </div>
   </section>
 

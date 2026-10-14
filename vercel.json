@@ -15,7 +15,8 @@
   ],
   "redirects": [
     {
-      "source": "https://www.vectordynamics.fr/:path*",
+      "source": "/:path*",
+      "has": [{ "type": "host", "eq": "www.vectordynamics.fr" }],
       "destination": "https://vectordynamics.fr/:path*",
       "permanent": true
     }

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Entraînement IA : ouvert par défaut.
+# Pour restreindre l'entraînement (sans bloquer la recherche), décommenter :
+# User-agent: GPTBot
+# Disallow: /
+#
+# User-agent: CCBot
+# Disallow: /
+
+Sitemap: https://vectordynamics.fr/sitemap.xml

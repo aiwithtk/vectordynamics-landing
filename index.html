@@ -3,21 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VECTOR DYNAMICS - Landing Page</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brand-beige': '#fbfaf7',
-          }
-        }
+  <title>Vector Dynamics — Incubateur en ligne pour solopreneurs IA</title>
+  <meta name="description" content="Incubateur en ligne pour solopreneurs IA : mentorat, outils IA et no-code, acquisition clients. Bâtis une activité rentable et structurée avec Vector Dynamics.">
+  <link rel="canonical" href="https://vectordynamics.fr/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vector Dynamics">
+  <meta property="og:url" content="https://vectordynamics.fr/">
+  <meta property="og:title" content="Vector Dynamics — Incubateur en ligne pour solopreneurs IA">
+  <meta property="og:description" content="Mentorat, outils IA et no-code, acquisition clients : bâtis une activité rentable, durable et structurée.">
+  <meta property="og:image" content="https://vectordynamics.fr/logo.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vector Dynamics — Incubateur en ligne pour solopreneurs IA">
+  <meta name="twitter:description" content="Mentorat, outils IA et no-code, acquisition clients : bâtis une activité rentable, durable et structurée.">
+  <meta name="twitter:image" content="https://vectordynamics.fr/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="apple-touch-icon" href="/logo.png">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vectordynamics.fr/#organization",
+        "name": "Vector Dynamics",
+        "url": "https://vectordynamics.fr/",
+        "logo": { "@type": "ImageObject", "url": "https://vectordynamics.fr/logo.png", "width": 456, "height": 145 },
+        "email": "contact@vectordynamics.fr",
+        "telephone": "+33977198071",
+        "sameAs": [
+          "https://fr.trustpilot.com/review/vectordynamics.fr",
+          "https://www.skool.com/vectordynamics/about"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vectordynamics.fr/#website",
+        "url": "https://vectordynamics.fr/",
+        "name": "Vector Dynamics",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://vectordynamics.fr/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://vectordynamics.fr/#webpage",
+        "url": "https://vectordynamics.fr/",
+        "name": "Vector Dynamics — Incubateur en ligne pour solopreneurs IA",
+        "description": "Incubateur en ligne pour solopreneurs IA : mentorat, outils IA et no-code, acquisition clients.",
+        "isPartOf": { "@id": "https://vectordynamics.fr/#website" },
+        "about": { "@id": "https://vectordynamics.fr/#service" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vectordynamics.fr/#service",
+        "name": "Incubateur Architect AI",
+        "provider": { "@id": "https://vectordynamics.fr/#organization" },
+        "areaServed": "FR",
+        "serviceType": "Incubateur et formation en ligne pour solopreneurs IA",
+        "audience": { "@type": "Audience", "audienceType": "Solopreneurs, freelances et fondateurs de startups IA" }
       }
-    }
+    ]
+  }
   </script>
+
+  <!-- Tailwind CSS compilé (remplace le CDN runtime) -->
+  <link rel="stylesheet" href="./tailwind.css">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +114,57 @@
     }
     .animate-marquee:hover {
       animation-play-state: paused;
+    }
+
+    /* Facade YouTube (chargement de l'iframe au clic uniquement) */
+    .yt-facade {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background: #000;
+    }
+    .yt-facade .yt-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .yt-facade .yt-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(33, 33, 33, 0.8);
+    }
+    .yt-facade .yt-play::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .yt-facade iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Accessibilité : désactiver les animations continues sur demande */
+    @media (prefers-reduced-motion: reduce) {
+      .aurora-blur-bubble-1,
+      .aurora-blur-bubble-2,
+      .animate-marquee,
+      .animate-pulse {
+        animation: none !important;
+      }
     }
   </style>
 </head>
@@ -100,8 +209,8 @@
   
   <section class="py-16 md:py-28 px-5 md:px-12 text-center max-w-4xl mx-auto space-y-6 relative z-10">
     
-    <div class="inline-block">
-      <span class="px-3 py-1 text-xs font-semibold tracking-wide rounded border border-[#002147]/30 text-[#002147]/85 font-sans tracking-widest uppercase text-[10px] px-2.5 py-0.5 rounded-none">
+    <div class="inline-block max-w-full">
+      <span class="whitespace-nowrap px-2.5 py-0.5 text-[10px] font-semibold tracking-widest uppercase rounded-none border border-[#002147]/30 text-[#002147]/85 font-sans inline-block">
         🎓 INCUBATEUR EXCLUSIF — PROGRAMME DE 90 JOURS
       </span>
     </div>
@@ -126,17 +235,35 @@
   <section class="py-8 px-5 md:px-12 max-w-4xl mx-auto text-center space-y-6 relative z-10">
     <div class="bg-[#070e28] border border-slate-800 p-1 shadow-lg overflow-hidden relative max-w-3xl mx-auto rounded-2xl">
       <div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-        <iframe 
-          class="w-full h-full border-0"
-          src="https://www.youtube.com/embed/ZQeqy4RQC1Q?si=ote5J1TCxWqryzNU" 
-          title="YouTube video player" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen
-        ></iframe>
+        <div id="yt-facade" class="yt-facade" data-video-id="ZQeqy4RQC1Q" role="button" tabindex="0" aria-label="Lire la vidéo de présentation de Vector Dynamics">
+          <img class="yt-thumb" src="https://i.ytimg.com/vi/ZQeqy4RQC1Q/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/ZQeqy4RQC1Q/hqdefault.jpg';">
+          <span class="yt-play" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var f = document.getElementById('yt-facade');
+      if (!f) return;
+      function load() {
+        var iframe = document.createElement('iframe');
+        iframe.className = 'w-full h-full border-0';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + f.getAttribute('data-video-id') + '?autoplay=1&rel=0';
+        iframe.title = 'Vidéo de présentation de Vector Dynamics';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        f.replaceChildren(iframe);
+        f.removeAttribute('role');
+        f.removeAttribute('tabindex');
+      }
+      f.addEventListener('click', load);
+      f.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); }
+      });
+    })();
+  </script>
 
   <!-- Tools Logos Section -->
   <section class="py-12 px-5 md:px-12 w-full mx-auto text-center relative z-10 border-t border-[#002147]/5 overflow-hidden">
@@ -356,18 +483,45 @@
     </div>
   </section>
 
-  <!-- Cal inline embed code begins -->
+  <!-- Cal inline embed code begins (chargé uniquement à l'approche de la section) -->
   <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "skool", {origin:"https://app.cal.com"});
+    (function () {
+      var target = document.getElementById('my-cal-inline-skool');
+      if (!target) return;
+      var skeleton = document.createElement('div');
+      skeleton.id = 'cal-skeleton';
+      skeleton.style.cssText = 'height:100%;width:100%;display:flex;align-items:center;justify-content:center;font-family:Plus Jakarta Sans,sans-serif;font-size:14px;color:#94a3b8;';
+      skeleton.textContent = 'Chargement du calendrier…';
+      target.appendChild(skeleton);
 
-    Cal.ns.skool("inline", {
-      elementOrSelector:"#my-cal-inline-skool",
-      config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
-      calLink: "vector-dynamics/skool",
-    });
+      var booted = false;
+      function boot() {
+        if (booted) return;
+        booted = true;
+        skeleton.remove();
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "skool", {origin:"https://app.cal.com"});
 
-    Cal.ns.skool("ui", {"hideEventTypeDetails":false,"layout":"week_view"});
+        Cal.ns.skool("inline", {
+          elementOrSelector:"#my-cal-inline-skool",
+          config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+          calLink: "vector-dynamics/skool",
+        });
+
+        Cal.ns.skool("ui", {"hideEventTypeDetails":false,"layout":"week_view"});
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; })) {
+            io.disconnect();
+            boot();
+          }
+        }, { rootMargin: '400px 0px' });
+        io.observe(target);
+      } else {
+        boot();
+      }
+    })();
   </script>
   <!-- Cal inline embed code ends -->
 
@@ -498,6 +652,7 @@
             Reçois chaque jeudi un cas d'étude technique, des templates de prompts avancés et nos retours d'expérience exclusifs.
           </p>
           <div>
+            <label for="beehiiv-email-input" class="sr-only">Adresse email pour la newsletter</label>
             <input
               id="beehiiv-email-input"
               type="email"

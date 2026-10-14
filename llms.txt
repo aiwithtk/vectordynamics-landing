@@ -1,0 +1,20 @@
+# Vector Dynamics
+
+> Incubateur en ligne pour solopreneurs IA : mentorat, outils IA et no-code, acquisition clients. Bâtis une activité rentable, durable et structurée.
+
+Vector Dynamics accompagne freelances, solopreneurs et fondateurs de startups IA avec un programme structuré : fondations IA et no-code, IA générative avancée, acquisition clients, ingénierie de la vente, pilotage de projets, mentorat et master classes.
+
+## Pages
+
+- [Accueil](https://vectordynamics.fr/): présentation du programme Incubateur Architect AI, piliers de formation, témoignages, FAQ, prise de rendez-vous
+
+## Liens
+
+- [Communauté Skool](https://www.skool.com/vectordynamics/about): rejoindre l'incubateur
+- [Avis clients Trustpilot](https://fr.trustpilot.com/review/vectordynamics.fr)
+- [Roadmap gratuite (Gumroad)](https://autonomynet.gumroad.com/l/ifibeg): guide de démarrage offert
+
+## Contact
+
+- Email : contact@vectordynamics.fr
+- Téléphone : +33 9 77 19 80 71
